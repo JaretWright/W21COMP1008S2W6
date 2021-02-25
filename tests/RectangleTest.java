@@ -22,6 +22,13 @@ class RectangleTest {
     }
 
     @Test
+    void getPerimeterSquare() {
+        //Rectangle is 20x20
+        //perimeter is 20*4=80
+        assertEquals(80,square.getPerimeter());
+    }
+
+    @Test
     void getArea() {
         //Rectangle 10x20 -> the area = 10*20 = 200
         assertEquals(200, rectangle.getArea());
@@ -57,5 +64,15 @@ class RectangleTest {
 
     @Test
     void setWidth() {
+        rectangle.setWidth(40);
+        assertEquals(40, rectangle.getWidth());
+    }
+
+    @Test
+    void setWidthInvalidLow()
+    {
+        assertThrows(IllegalArgumentException.class, ()-> {
+            rectangle.setWidth(0);
+        });
     }
 }
