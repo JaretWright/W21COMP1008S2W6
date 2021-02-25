@@ -57,4 +57,10 @@ public class Employee {
     public void setEmployeeNum(int employeeNum) {
         this.employeeNum = employeeNum;
     }
+
+    public String toString()
+    {
+        return String.format("%s %s employee number: %d ->%s",firstName,lastName,
+                                        employeeNum, getClass());
+    }
 }

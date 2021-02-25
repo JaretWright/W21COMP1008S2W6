@@ -27,4 +27,9 @@ public class HourlyEmployee extends Employee{
     public void setHoursWorked(double hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
+
+    public String toString()
+    {
+        return String.format("%s, hourly rate: $%.2f", super.toString(), hourlyRate);
+    }
 }
