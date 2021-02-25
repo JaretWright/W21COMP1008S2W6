@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Employee {
     private String firstName, lastName;
@@ -34,7 +35,19 @@ public class Employee {
     }
 
     public void setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
+        //can't be born in the future
+        if (birthday.isAfter(LocalDate.now()))
+            throw new IllegalArgumentException("You cannot be an employee if born " +
+                                                    "in the future");
+        else if (getAge(birthday) < 14)
+            throw new IllegalArgumentException("You must be at least 14 years old");
+        else
+            this.birthday = birthday;
+    }
+
+    private int getAge(LocalDate birthday)
+    {
+        return Period.between(birthday, LocalDate.now()).getYears();
     }
 
     public int getEmployeeNum() {
