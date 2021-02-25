@@ -51,6 +51,9 @@ class RectangleTest {
         } catch (IllegalArgumentException e)
         {
             System.out.println(e.getMessage());
+        } catch (Exception e)
+        {
+            fail("should have thrown an IllegalArgumentException");
         }
     }
 
