@@ -33,6 +33,18 @@ class CircleTest {
     }
 
     @Test
+    void setRadiusInvalid2()
+    {
+        try{
+            circle.setRadius(0);
+            fail ("radius of 0 should have triggered an exception");
+        } catch (IllegalArgumentException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Test
     void testToString() {
         //client asked for "Circle with radius 10"
         assertEquals("Circle with radius 10", circle.toString());

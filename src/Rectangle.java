@@ -1,6 +1,4 @@
-import java.util.IllegalFormatWidthException;
-
-public class Rectangle {
+public class Rectangle implements TwoDimensionalShape{
     private int length, width;
 
     public Rectangle(int length, int width) {
@@ -12,7 +10,7 @@ public class Rectangle {
         return 2*width+2*length;
     }
 
-    public int getArea(){
+    public double getArea(){
         return length*width;
     }
 
@@ -36,5 +34,10 @@ public class Rectangle {
             this.width = width;
         else
             throw new IllegalArgumentException("width must be > 0");
+    }
+
+    public String toString()
+    {
+        return String.format("Rectangle %dx%d",length,width);
     }
 }

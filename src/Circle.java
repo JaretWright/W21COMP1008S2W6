@@ -1,4 +1,4 @@
-public class Circle {
+public class Circle implements TwoDimensionalShape{
     private double radius;
 
     public Circle(double radius) {
@@ -25,4 +25,5 @@ public class Circle {
     {
         return String.format("Circle with radius %.0f",radius);
     }
+
 }
