@@ -45,7 +45,14 @@ class RectangleTest {
         {
             System.out.println(e.getMessage());
         }
+    }
 
+    @Test
+    void setLengthInvalidLow2()
+    {
+        assertThrows(IllegalArgumentException.class, ()-> {
+            rectangle.setLength(-1);
+        });
     }
 
     @Test
